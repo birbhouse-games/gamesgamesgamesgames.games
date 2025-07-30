@@ -4,6 +4,7 @@ import {
 	// eslint-disable-next-line camelcase
 	Geist_Mono,
 } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/next'
 import type { Metadata } from 'next'
 
 
@@ -44,6 +45,7 @@ export default function RootLayout({
 			<body className={`${geistSans.variable} ${geistMono.variable}`}>
 				{children}
 				<Footer />
+				<Analytics />
 			</body>
 		</html>
 	)
