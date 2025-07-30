@@ -5,13 +5,14 @@ import {
 	Geist_Mono,
 } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
-import type { Metadata } from 'next'
+import { type Metadata } from 'next'
 
 
 
 
 
 // Local imports
+import { Banner } from '@/components/Banner/Banner'
 import { Footer } from '@/components/Footer/Footer'
 
 import '@/styles/globals.scss'
@@ -43,8 +44,12 @@ export default function RootLayout({
 	return (
 		<html lang={'en'}>
 			<body className={`${geistSans.variable} ${geistMono.variable}`}>
+				<Banner />
+
 				{children}
+
 				<Footer />
+
 				<Analytics />
 			</body>
 		</html>
