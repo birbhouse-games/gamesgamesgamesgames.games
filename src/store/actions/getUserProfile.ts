@@ -1,4 +1,6 @@
 // Local imports
+import { isAPIError } from '@/helpers/isAPIError'
+import { logout } from '@/store/actions/logout'
 import { store } from '@/store/store'
 import * as API from '@/helpers/API'
 
@@ -16,11 +18,19 @@ export async function getUserProfile() {
 	if (!isCheckingAuthentication && isAuthenticated) {
 		store.set(() => ({ isRetrievingProfile: true }))
 
-		const { data } = await API.getUserProfile()
+		try {
+			const { data } = await API.getUserProfile()
 
-		store.set(() => ({
-			isRetrievingProfile: false,
-			userProfile: data,
-		}))
+			store.set(() => ({
+				isRetrievingProfile: false,
+				userProfile: data,
+			}))
+		} catch (error) {
+			if (isAPIError(error)) {
+				if (error.cause.status === 401) {
+					await logout()
+				}
+			}
+		}
 	}
 }

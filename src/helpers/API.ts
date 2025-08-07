@@ -72,7 +72,7 @@ async function apiFetchJSON<T = Record<string, unknown>>(path: string, options?:
 		return response.json()
 	}
 
-	throw new Error('Whoops.')
+	throw new Error('Encountered an error from the API.', { cause: response })
 }
 
 
