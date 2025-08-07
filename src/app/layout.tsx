@@ -1,3 +1,5 @@
+'use client'
+
 // Module imports
 import {
 	Geist,
@@ -5,7 +7,7 @@ import {
 	Geist_Mono,
 } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
-import { type Metadata } from 'next'
+// import { type Metadata } from 'next'
 
 
 
@@ -14,6 +16,8 @@ import { type Metadata } from 'next'
 // Local imports
 import { Banner } from '@/components/Banner/Banner'
 import { Footer } from '@/components/Footer/Footer'
+import { PageContent } from '@/components/PageContent/PageContent'
+import { useWatchAuthToken } from '@/hooks/useWatchAuthToken'
 
 import '@/styles/globals.scss'
 
@@ -41,12 +45,16 @@ export default function RootLayout({
 }: Readonly<{
 	children: React.ReactNode
 }>) {
+	useWatchAuthToken()
+
 	return (
 		<html lang={'en'}>
 			<body className={`${geistSans.variable} ${geistMono.variable}`}>
 				<Banner />
 
-				{children}
+				<PageContent>
+					{children}
+				</PageContent>
 
 				<Footer />
 
@@ -56,7 +64,7 @@ export default function RootLayout({
 	)
 }
 
-export const metadata: Metadata = {
-	title: 'gamesgamesgamesgamesgames',
-	description: 'games!',
-}
+// export const metadata: Metadata = {
+// 	title: 'gamesgamesgamesgamesgames',
+// 	description: 'games!',
+// }

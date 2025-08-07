@@ -1,6 +1,13 @@
+// Local imports
+import styles from './Footer.module.scss'
+
+
+
+
+
 export function Footer() {
 	return (
-		<footer>
+		<footer className={styles['container']}>
 			{'Footer'}
 		</footer>
 	)

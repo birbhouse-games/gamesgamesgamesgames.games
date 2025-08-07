@@ -1,0 +1,30 @@
+.container {
+	position: relative;
+
+	&:not(:hover) {
+		.menu-wrapper {
+			display: none;
+		}
+	}
+
+	.avatar-wrapper {
+		border-radius: 2.5rem;
+		height: 5rem;
+		overflow: hidden;
+		width: 5rem;
+
+		img {
+			height: 100%;
+			width: 100%;
+		}
+	}
+
+	.menu-wrapper {
+		align-items: stretch;
+		display: flex;
+		flex-direction: column;
+		position: absolute;
+		right: 0;
+		top: 100%;
+	}
+}
