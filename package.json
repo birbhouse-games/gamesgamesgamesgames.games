@@ -3,33 +3,35 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --experimental-https",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@atproto/api": "^0.16.2",
     "@vercel/analytics": "^1.5.0",
     "classnames": "^2.5.1",
     "next": "15.4.5",
-    "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
+    "statery": "^0.7.1"
   },
   "devDependencies": {
     "@birbhouse/eslint-config": "^1.2.0",
     "@birbhouse/eslint-config-typescript": "^1.1.0",
-    "@eslint/eslintrc": "^3",
-    "@eslint/js": "^9.31.0",
+    "@eslint/eslintrc": "^3.3.1",
+    "@eslint/js": "^9.32.0",
     "@types/eslint": "^9.6.1",
     "@types/eslint-plugin-security": "^3.0.0",
     "@types/eslint__eslintrc": "^2.1.2",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "@typescript-eslint/eslint-plugin": "8.38.0",
-    "@typescript-eslint/parser": "8.38.0",
-    "eslint": "^9",
-    "eslint-config-next": "15.4.5",
+    "@types/node": "^20.19.9",
+    "@types/react": "^19.1.9",
+    "@types/react-dom": "^19.1.7",
+    "@typescript-eslint/eslint-plugin": "8.39.0",
+    "@typescript-eslint/parser": "8.39.0",
+    "eslint": "^9.32.0",
+    "eslint-config-next": "15.4.6",
     "eslint-plugin-editorconfig": "^4.0.3",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-import-x": "^4.16.1",
@@ -40,9 +42,9 @@
     "eslint-plugin-sort-class-members": "^1.21.0",
     "eslint-plugin-unused-imports": "^4.1.4",
     "globals": "^16.3.0",
-    "sass": "^1.89.2",
-    "typescript": "^5",
-    "typescript-eslint": "^8.38.0"
+    "sass": "^1.90.0",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.39.0"
   },
   "packageManager": "yarn@4.9.2+sha512.1fc009bc09d13cfd0e19efa44cbfc2b9cf6ca61482725eb35bbc5e257e093ebf4130db6dfe15d604ff4b79efd8e1e8e99b25fa7d0a6197c9f9826358d4d65c3c"
 }
