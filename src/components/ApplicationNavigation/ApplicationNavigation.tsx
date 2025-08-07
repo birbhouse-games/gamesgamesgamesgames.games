@@ -22,6 +22,11 @@ export function ApplicationNavigation() {
 	return (
 		<nav className={styles['container']}>
 			<Link href={'/'}>{'Home'}</Link>
+
+			{isAuthenticated && (
+				<Link href={'/dashboard'}>{'Dashboard'}</Link>
+			)}
+
 			<Link href={'/about'}>{'About'}</Link>
 
 			{isAuthenticated && (
