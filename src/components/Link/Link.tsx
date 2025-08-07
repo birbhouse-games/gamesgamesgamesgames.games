@@ -19,13 +19,13 @@ import styles from './Link.module.scss'
 
 
 // Types
-type Props = PropsWithChildren<{
+type Props = Readonly<PropsWithChildren<{
 	className?: string,
 	href?: string,
 	isActive?: boolean,
 	onClick?: MouseEventHandler<HTMLAnchorElement>,
 	showActive?: boolean,
-}>
+}>>
 
 
 

@@ -13,7 +13,7 @@ import styles from './PageContent.module.scss'
 
 
 // Types
-type Props = PropsWithChildren
+type Props = Readonly<PropsWithChildren>
 
 
 

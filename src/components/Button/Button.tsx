@@ -1,8 +1,8 @@
 // Module imports
 import {
-  FocusEventHandler,
-  MouseEventHandler,
-  ReactNode,
+  type FocusEventHandler,
+  type MouseEventHandler,
+  type PropsWithChildren,
 } from 'react'
 import classnames from 'classnames'
 
@@ -20,8 +20,7 @@ import styles from './Button.module.scss'
 
 
 // Types
-type Props = {
-  children?: ReactNode,
+type Props = Readonly<PropsWithChildren<{
   className?: string,
   hideOverflow?: boolean,
   href?: string,
@@ -30,7 +29,7 @@ type Props = {
   onClick?: MouseEventHandler<HTMLButtonElement>,
   onFocus?: FocusEventHandler<HTMLButtonElement>,
   type?: 'button' | 'reset' | 'submit',
-}
+}>>
 
 
 

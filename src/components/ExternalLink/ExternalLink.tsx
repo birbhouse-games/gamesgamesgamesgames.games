@@ -9,12 +9,12 @@ import {
 
 
 // Types
-type Props = PropsWithChildren<{
+type Props = Readonly<PropsWithChildren<{
 	className?: string,
 	href?: string,
 	onClick?: MouseEventHandler<HTMLAnchorElement>,
 	rel?: string,
-}>
+}>>
 
 
 
