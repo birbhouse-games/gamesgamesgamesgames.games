@@ -37,13 +37,6 @@ export default function DashboardPage() {
 		userProfile,
 	])
 
-	console.log({
-		isAuthenticated,
-		isCheckingAuthentication,
-		isRetrievingProfile,
-		userProfile,
-	})
-
 	return (
 		<main>
 			{isRetrievingProfile && ('Loading profile...')}

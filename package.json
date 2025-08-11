@@ -12,10 +12,12 @@
     "@atproto/api": "^0.16.2",
     "@vercel/analytics": "^1.5.0",
     "classnames": "^2.5.1",
+    "motion": "^12.23.12",
     "next": "15.4.5",
     "react": "19.1.1",
     "react-dom": "19.1.1",
-    "statery": "^0.7.1"
+    "statery": "^0.7.1",
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
     "@birbhouse/eslint-config": "^1.2.0",

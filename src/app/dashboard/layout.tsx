@@ -8,6 +8,7 @@ import { PropsWithChildren } from 'react'
 
 
 // Local imports
+import { ToastManager } from '@/components/ToastManager/ToastManager'
 import { useUnauthenticatedRedirect } from '@/hooks/useUnauthenticatedRedirect'
 
 
@@ -26,5 +27,10 @@ export default function DashboardLayout(props: Props) {
 
 	useUnauthenticatedRedirect()
 
-	return children
+	return (
+		<>
+			<ToastManager />
+			{children}
+		</>
+	)
 }

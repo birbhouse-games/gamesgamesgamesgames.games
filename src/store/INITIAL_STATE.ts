@@ -10,5 +10,6 @@ export const INITIAL_STATE: GlobalState = {
 	isAuthenticated: false,
 	isCheckingAuthentication: true,
 	isRetrievingProfile: false,
+	toastQueue: [],
 	userProfile: null,
 }
