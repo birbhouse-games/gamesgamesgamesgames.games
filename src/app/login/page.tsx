@@ -1,32 +1,47 @@
 'use client'
 
+// Module imports
+import { useState } from 'react'
+
+
+
+
+
 // Local imports
 import { Button } from '@/components/Button/Button'
-import * as API from '@/helpers/API'
+import { login } from '@/store/actions/login'
 
 
 
 
 
 export default function LoginPage() {
+	const [isLoggingIn, setIsLoggingIn] = useState(false)
+
 	const handleSubmit = (formData: FormData) => {
+		setIsLoggingIn(true)
+
 		const handle = formData.get('handle')
 
 		if (typeof handle !== 'string') {
+			setIsLoggingIn(false)
 			throw new Error('handle must be a string')
 		}
 
-		API.login(handle, '/dashboard')
+		login(handle.replace(/^@/u, ''))
 	}
 
 	return (
 		<form action={handleSubmit}>
 			<input
+				disabled={isLoggingIn}
 				name={'handle'}
-				placeholder={'gamesgamesgamesgames.games'}
+				placeholder={'@gamesgamesgamesgames.games'}
 				type={'text'} />
 
-			<Button type={'submit'}>{'Login'}</Button>
+			<Button
+				isDisabled={isLoggingIn}
+				type={'submit'}>{'Login'}</Button>
 		</form>
 	)
 }

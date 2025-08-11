@@ -89,21 +89,13 @@ export function getUserProfile() {
 }
 
 /**
- * Redirects the user to the OAuth login for their PDS.
+ * Retrieves the OAuth login URL for the current user.
  *
  * @param handle The user's ATproto handle.
- * @param destination The path to which the user will be returned.
+ * @returns The URL at which the user can login.
  */
-export function login(handle: string, destination?: string) {
-	const redirectUrl = new URL(`${process.env.NEXT_PUBLIC_API_URL}/v1/auth/atproto`)
-
-	redirectUrl.searchParams.append('handle', handle)
-
-	if (destination) {
-		redirectUrl.searchParams.append('destination', destination)
-	}
-
-	window.location.href = redirectUrl.toString()
+export function getLoginURL(handle: string) {
+	return apiFetchJSON<JSONAPIResponse<{ redirectURL: string }>>(`/v1/auth/atproto?handle=${handle}`)
 }
 
 export function logout() {

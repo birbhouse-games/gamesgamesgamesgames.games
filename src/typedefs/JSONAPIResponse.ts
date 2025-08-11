@@ -1,5 +1,6 @@
 export interface JSONAPIResponse<DataShape = Record<string, unknown>> {
-	data: DataShape
+	data?: DataShape
+	errors?: string[]
 	jsonapi: {
 		version: string
 	}
